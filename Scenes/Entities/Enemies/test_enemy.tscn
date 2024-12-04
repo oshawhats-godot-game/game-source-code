@@ -31,17 +31,21 @@ shape = SubResource("RectangleShape2D_lkuiu")
 [node name="CollisionShape2D" parent="TargetArea" index="0"]
 shape = SubResource("CircleShape2D_4a8sy")
 
-[node name="PropertyLabel" parent="." index="3" instance=ExtResource("3_12285")]
+[node name="HitArea" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" index="0"]
+shape = SubResource("RectangleShape2D_th2g1")
+
+[node name="PropertyLabel" parent="." index="4" instance=ExtResource("3_12285")]
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
 Property = "state"
 
-[node name="PropertyLabel2" parent="." index="4" instance=ExtResource("3_12285")]
+[node name="PropertyLabel2" parent="." index="5" instance=ExtResource("3_12285")]
 offset_left = -0.5
 offset_top = -40.5
 offset_right = 0.5
 offset_bottom = -17.5
 Property = "health"
-
-[node name="HitArea" type="Area2D" parent="." index="5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" index="0"]
-shape = SubResource("RectangleShape2D_th2g1")
