@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://vbv3xmd34idt"]
+
+[ext_resource type="PackedScene" uid="uid://dlp311g3aj5ln" path="res://Scenes/entity.tscn" id="1_6plm2"]
+[ext_resource type="Script" path="res://Scripts/Entities/enemy.gd" id="2_1ehl7"]
+
+[node name="Enemy" instance=ExtResource("1_6plm2")]
+script = ExtResource("2_1ehl7")
+Health = 5.0
+Speed = 100.0
+
+[node name="TargetArea" type="Area2D" parent="." index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetArea" index="0"]

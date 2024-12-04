@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkhtc3cbw2cdt"]
+
+[ext_resource type="PackedScene" uid="uid://vbv3xmd34idt" path="res://Scenes/Entities/enemy.tscn" id="1_anpsd"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/test_enemy.gd" id="2_datp6"]
+[ext_resource type="PackedScene" uid="uid://snybi3jv52sg" path="res://GUI Scenes/property_label.tscn" id="3_12285"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkuiu"]
+size = Vector2(40, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4a8sy"]
+radius = 150.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_th2g1"]
+size = Vector2(50, 50)
+
+[node name="TestEnemy" instance=ExtResource("1_anpsd")]
+script = ExtResource("2_datp6")
+Knockback = 300.0
+KnockbackRecovery = 1000.0
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0, 0.164706, 1)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_lkuiu")
+
+[node name="CollisionShape2D" parent="TargetArea" index="0"]
+shape = SubResource("CircleShape2D_4a8sy")
+
+[node name="PropertyLabel" parent="." index="3" instance=ExtResource("3_12285")]
+Property = "state"
+
+[node name="PropertyLabel2" parent="." index="4" instance=ExtResource("3_12285")]
+offset_left = -0.5
+offset_top = -40.5
+offset_right = 0.5
+offset_bottom = -17.5
+Property = "health"
+
+[node name="HitArea" type="Area2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" index="0"]
+shape = SubResource("RectangleShape2D_th2g1")

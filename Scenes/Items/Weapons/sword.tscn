@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfru2akq4hbcl"]
+
+[ext_resource type="PackedScene" uid="uid://lxl0njnea4jo" path="res://Scenes/Items/weapon.tscn" id="1_b4b3p"]
+[ext_resource type="Script" path="res://Scripts/Items/Weapons/sword.gd" id="2_edtv6"]
+[ext_resource type="Texture2D" uid="uid://dfvk21mtpw2du" path="res://Art/Items/Weapons/sword.png" id="3_br244"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7305x"]
+atlas = ExtResource("3_br244")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5iyni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7305x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2wcv"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vffxt"]
+size = Vector2(10, 32)
+
+[node name="Sword" instance=ExtResource("1_b4b3p")]
+script = ExtResource("2_edtv6")
+SwingDamage = 5.0
+SwingAngle = 45.0
+SwingTime = 1.5
+StabDamage = 2.0
+StabDepth = 20.0
+StabTime = 0.5
+Knockback = 500.0
+PointTowardMouse = true
+
+[node name="AnimatedSprite2D" parent="ChildHolder" index="0"]
+position = Vector2(23, 0)
+rotation = 1.5708
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5iyni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChildHolder/HitArea" index="0"]
+position = Vector2(21, 0)
+shape = SubResource("RectangleShape2D_r2wcv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ChildHolder/HitArea" index="1"]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_vffxt")

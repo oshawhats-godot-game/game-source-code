@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlp311g3aj5ln"]
+
+[ext_resource type="Script" path="res://Scripts/entity.gd" id="1_j0d5e"]
+
+[node name="Entity" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_j0d5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

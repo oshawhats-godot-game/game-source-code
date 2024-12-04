@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://daajyu6ra1xs5"]
+
+[ext_resource type="PackedScene" uid="uid://7p1d2delcpd0" path="res://Scenes/Entities/player.tscn" id="1_aqrve"]
+[ext_resource type="PackedScene" uid="uid://bkhtc3cbw2cdt" path="res://Scenes/Entities/Enemies/test_enemy.tscn" id="2_egmpb"]
+
+[node name="Main" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -288.0
+offset_top = -162.0
+offset_right = 288.0
+offset_bottom = 162.0
+color = Color(0.470076, 0.470076, 0.470076, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Player" parent="." instance=ExtResource("1_aqrve")]
+
+[node name="TestEnemy" parent="." instance=ExtResource("2_egmpb")]
+position = Vector2(164, -120)
+Knockback = 100.0
+KnockbackRecovery = 1000.0

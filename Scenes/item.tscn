@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdv8d3nwjuym8"]
+
+[ext_resource type="Script" path="res://Scripts/item.gd" id="1_wvdrx"]
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_wvdrx")
+
+[node name="ChildHolder" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ChildHolder"]
+texture_filter = 1

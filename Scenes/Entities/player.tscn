@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://7p1d2delcpd0"]
+
+[ext_resource type="PackedScene" uid="uid://dlp311g3aj5ln" path="res://Scenes/entity.tscn" id="1_mnxic"]
+[ext_resource type="Script" path="res://Scripts/Entities/player.gd" id="2_g765o"]
+[ext_resource type="PackedScene" uid="uid://cyqvd2hx5rcrc" path="res://GUI Scenes/player_gui.tscn" id="3_7kxvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jakwy"]
+size = Vector2(40, 40)
+
+[node name="Player" instance=ExtResource("1_mnxic")]
+script = ExtResource("2_g765o")
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.419608, 0.843137, 1, 1)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_jakwy")
+
+[node name="LeftItemHolder" type="Marker2D" parent="." index="2"]
+position = Vector2(-14, 0)
+
+[node name="RightItemHolder" type="Marker2D" parent="." index="3"]
+position = Vector2(14, 0)
+
+[node name="PlayerGUI" parent="." index="4" instance=ExtResource("3_7kxvo")]

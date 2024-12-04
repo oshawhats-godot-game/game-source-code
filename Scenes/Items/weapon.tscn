@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://lxl0njnea4jo"]
+
+[ext_resource type="Script" path="res://Scripts/Items/weapon.gd" id="1_0ncnw"]
+[ext_resource type="PackedScene" uid="uid://bdv8d3nwjuym8" path="res://Scenes/item.tscn" id="1_mf1uh"]
+
+[node name="Weapon" instance=ExtResource("1_mf1uh")]
+script = ExtResource("1_0ncnw")
+PointTowardMouse = false
+
+[node name="HitArea" type="Area2D" parent="ChildHolder" index="1"]
