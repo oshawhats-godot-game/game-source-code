@@ -41,10 +41,10 @@ jobs:
           apt-get update -y && apt-get install -y unzip && apt-get install -y wget && apt-get install -y cpio
           apt install -y npm
           npm i --save wrangler
-          mkdir -p $HOME/.local/share/godot/templates/4.3.stable.mono
+          mkdir -p $HOME/.local/share/godot/templates/4.3.stable
           wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
-          unzip Godot_v4.3-stable_mono_export_templates.tpz -d /tmp
-          mv /tmp/templates/* $HOME/.local/share/godot/templates/4.3.stable.mono
+          unzip Godot_v4.3-stable_export_templates.tpz -d /tmp
+          mv /tmp/templates/* $HOME/.local/share/godot/templates/4.3.stable
           
       - name: "Export to HTML5"
         run: | 
