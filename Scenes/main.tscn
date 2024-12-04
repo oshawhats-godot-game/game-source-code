@@ -20,4 +20,3 @@ zoom = Vector2(2, 2)
 [node name="TestEnemy" parent="." instance=ExtResource("2_egmpb")]
 position = Vector2(164, -120)
 Knockback = 100.0
-KnockbackRecovery = 1000.0
