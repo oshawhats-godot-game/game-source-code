@@ -49,22 +49,22 @@ jobs:
       - name: "Export to HTML5"
         run: | 
           mkdir -v -p ${{ format( '{0}/web', env.BUILD_PATH ) }}
-          godot -v --export-release "HTML5" ${{ format( '{0}/web/index.html', env.BUILD_PATH ) }}
+          godot -v --export-release "HTML5" --rendering-driver opengl3 ${{ format( '{0}/web/index.html', env.BUILD_PATH ) }}
       
       - name: "Export to OSX"
         run: |
           mkdir -v -p ${{ format( '{0}/mac', env.BUILD_PATH ) }}
-          godot -v --export-release "Mac OSX" ${{ format( '{0}/mac/macos.zip', env.BUILD_PATH ) }}
+          godot -v --export-release "Mac OSX" --rendering-driver opengl3 ${{ format( '{0}/mac/macos.zip', env.BUILD_PATH ) }}
 
       - name: "Export to Windows"
         run: |
           mkdir -v -p ${{ format( '{0}/windows', env.BUILD_PATH ) }}
-          godot -v --export-release "Windows Desktop" ${{ format( '{0}/windows/windows.exe', env.BUILD_PATH ) }}
+          godot -v --export-release "Windows Desktop" --rendering-driver opengl3 ${{ format( '{0}/windows/windows.exe', env.BUILD_PATH ) }}
 
       - name: "Export to X11"
         run: |
           mkdir -v -p ${{ format( '{0}/linux', env.BUILD_PATH ) }}
-          godot -v --export-release "Linux/X11" ${{ format( '{0}/linux/linux.x86_64', env.BUILD_PATH ) }}
+          godot -v --export-release "Linux/X11" --rendering-driver opengl3 ${{ format( '{0}/linux/linux.x86_64', env.BUILD_PATH ) }}
       
       - name: "Upload Artifacts"
         uses: actions/upload-artifact@master
