@@ -49,7 +49,7 @@ jobs:
       - name: "Export to HTML5"
         run: | 
           mkdir -v -p ${{ format( '{0}/web', env.BUILD_PATH ) }}
-          godot -v --export-release "HTML5" --rendering-driver opengl3 --headless ${{ format( '{0}/web/index.html', env.BUILD_PATH ) }}
+          godot -v --export-release "Web" --rendering-driver opengl3 --headless ${{ format( '{0}/web/index.html', env.BUILD_PATH ) }}
       
       - name: "Export to OSX"
         run: |
