@@ -25,7 +25,7 @@ jobs:
       contents: write
       deployments: write
     container:
-      image: barichello/godot-ci:mono-4.3
+      image: barichello/godot-ci:4.3
     
     steps:
       - name: "Checkout"
@@ -42,7 +42,7 @@ jobs:
           apt install -y npm
           npm i --save wrangler
           mkdir -p $HOME/.local/share/godot/templates/4.3.stable.mono
-          wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_mono_export_templates.tpz
+          wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
           unzip Godot_v4.3-stable_mono_export_templates.tpz -d /tmp
           mv /tmp/templates/* $HOME/.local/share/godot/templates/4.3.stable.mono
           
