@@ -78,5 +78,6 @@ secondary_attack={
 
 [rendering]
 
+gl_compatibility/fallback_to_angle=false
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
