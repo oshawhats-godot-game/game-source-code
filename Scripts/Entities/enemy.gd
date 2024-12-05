@@ -13,7 +13,7 @@ func _ready() -> void:
 	health = max_health
 
 
-func get_nearest_player() -> Player:
+func get_nearest_targetable_player() -> Player:
 	var nearest_player = null
 	var nearest_player_dist = INF
 	

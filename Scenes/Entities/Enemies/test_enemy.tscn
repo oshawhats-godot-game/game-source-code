@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkhtc3cbw2cdt"]
+[gd_scene load_steps=8 format=3 uid="uid://bkhtc3cbw2cdt"]
 
 [ext_resource type="PackedScene" uid="uid://vbv3xmd34idt" path="res://Scenes/Entities/enemy.tscn" id="1_anpsd"]
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/test_enemy.gd" id="2_datp6"]
-[ext_resource type="PackedScene" uid="uid://snybi3jv52sg" path="res://GUI Scenes/property_label.tscn" id="3_12285"]
+[ext_resource type="PackedScene" uid="uid://cg27srdoiylbo" path="res://Scenes/States/enemy_idle.tscn" id="3_p26kb"]
+[ext_resource type="PackedScene" uid="uid://g7mune64mhgp" path="res://Scenes/States/enemy_follow.tscn" id="4_sxqt0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkuiu"]
 size = Vector2(40, 40)
@@ -16,7 +17,6 @@ size = Vector2(50, 50)
 [node name="TestEnemy" instance=ExtResource("1_anpsd")]
 script = ExtResource("2_datp6")
 Knockback = 300.0
-KnockbackRecovery = 1000.0
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 offset_left = -20.0
@@ -36,16 +36,12 @@ shape = SubResource("CircleShape2D_4a8sy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" index="0"]
 shape = SubResource("RectangleShape2D_th2g1")
 
-[node name="PropertyLabel" parent="." index="4" instance=ExtResource("3_12285")]
-offset_left = -0.5
-offset_top = -11.5
-offset_right = 0.5
-offset_bottom = 11.5
-Property = "state"
+[node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("InitialState")]
+InitialState = NodePath("idle")
 
-[node name="PropertyLabel2" parent="." index="5" instance=ExtResource("3_12285")]
-offset_left = -0.5
-offset_top = -40.5
-offset_right = 0.5
-offset_bottom = -17.5
-Property = "health"
+[node name="idle" parent="StateMachine" index="0" node_paths=PackedStringArray("enemy") instance=ExtResource("3_p26kb")]
+enemy = NodePath("../..")
+
+[node name="follow" parent="StateMachine" index="1" node_paths=PackedStringArray("enemy") instance=ExtResource("4_sxqt0")]
+enemy = NodePath("../..")
+max_follow_dist = 200.0
