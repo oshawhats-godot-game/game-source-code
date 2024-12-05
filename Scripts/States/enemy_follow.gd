@@ -3,7 +3,7 @@ extends State
 
 @export var enemy: Enemy
 @export var speed: float = 50
-@export var max_follow_dist: float = 200
+@export var max_follow_dist: float = 500
 @export var min_follow_dist: float = 15
 
 var target: Node2D

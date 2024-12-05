@@ -6,5 +6,5 @@
 [node name="follow" instance=ExtResource("1_hhgwe")]
 script = ExtResource("2_ls60r")
 speed = 50.0
-max_follow_dist = 200.0
+max_follow_dist = 500.0
 min_follow_dist = 15.0
