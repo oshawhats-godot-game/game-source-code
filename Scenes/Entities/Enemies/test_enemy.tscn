@@ -17,7 +17,7 @@ size = Vector2(50, 50)
 
 [node name="TestEnemy" instance=ExtResource("1_anpsd")]
 script = ExtResource("2_datp6")
-Health = 10.0
+Health = 20.0
 Knockback = 300.0
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
