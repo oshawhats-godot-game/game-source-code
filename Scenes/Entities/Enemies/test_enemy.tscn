@@ -44,4 +44,4 @@ enemy = NodePath("../..")
 
 [node name="follow" parent="StateMachine" index="1" node_paths=PackedStringArray("enemy") instance=ExtResource("4_sxqt0")]
 enemy = NodePath("../..")
-max_follow_dist = 200.0
+speed = 100.0
