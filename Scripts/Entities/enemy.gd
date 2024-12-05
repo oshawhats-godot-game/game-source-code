@@ -43,11 +43,11 @@ func get_nearest_targetable_player() -> Player:
 	return nearest_player
 
 
-func update(delta: float):
+func update(_delta: float):
 	pass
 
 
-func physics_update(delta: float):
+func physics_update(_delta: float):
 	pass
 
 
