@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkhtc3cbw2cdt"]
+[gd_scene load_steps=9 format=3 uid="uid://bkhtc3cbw2cdt"]
 
 [ext_resource type="PackedScene" uid="uid://vbv3xmd34idt" path="res://Scenes/Entities/enemy.tscn" id="1_anpsd"]
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/test_enemy.gd" id="2_datp6"]
 [ext_resource type="PackedScene" uid="uid://cg27srdoiylbo" path="res://Scenes/States/enemy_idle.tscn" id="3_p26kb"]
 [ext_resource type="PackedScene" uid="uid://g7mune64mhgp" path="res://Scenes/States/enemy_follow.tscn" id="4_sxqt0"]
+[ext_resource type="PackedScene" uid="uid://yw7tjn4svm5r" path="res://GUI Scenes/stat_bar.tscn" id="5_fcjca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkuiu"]
 size = Vector2(40, 40)
@@ -16,6 +17,7 @@ size = Vector2(50, 50)
 
 [node name="TestEnemy" instance=ExtResource("1_anpsd")]
 script = ExtResource("2_datp6")
+Health = 10.0
 Knockback = 300.0
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
@@ -45,3 +47,13 @@ enemy = NodePath("../..")
 [node name="follow" parent="StateMachine" index="1" node_paths=PackedStringArray("enemy") instance=ExtResource("4_sxqt0")]
 enemy = NodePath("../..")
 speed = 100.0
+
+[node name="Node2D" type="Node2D" parent="." index="5"]
+scale = Vector2(0.25, 0.25)
+
+[node name="StatBar" parent="Node2D" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("5_fcjca")]
+offset_left = -64.0
+offset_top = -128.0
+offset_right = 64.0
+offset_bottom = -101.0
+Target = NodePath("../..")
