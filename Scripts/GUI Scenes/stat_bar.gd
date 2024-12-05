@@ -7,9 +7,10 @@ extends ProgressBar
 
 
 func _ready() -> void:
+	if not Target:
+		Target = get_parent()
+
+
+func _process(_delta: float) -> void:
 	max_value = Target.get(MaxProperty)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
 	value = Target.get(Property)
