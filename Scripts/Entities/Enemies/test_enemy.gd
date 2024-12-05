@@ -1,7 +1,7 @@
 extends Enemy
 
 
-func _physics_process(delta: float) -> void:
+func physics_update(delta: float) -> void:
 	velocity += knockback_velocity
 	move_and_slide()
 	
