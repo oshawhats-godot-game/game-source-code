@@ -92,7 +92,7 @@ jobs:
       
       - name: "Deploy to GitHub Pages"
         id: github_pages_deploy
-        if: ${{ ! endsWith( env.WORKFLOW_NAME, 'dev-build' ) }}
+        #if: ${{ ! endsWith( env.WORKFLOW_NAME, 'dev-build' ) }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: ${{ format( '{0}/web', env.BUILD_PATH ) }}
