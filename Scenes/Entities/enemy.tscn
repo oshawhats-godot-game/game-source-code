@@ -8,7 +8,7 @@
 script = ExtResource("2_1ehl7")
 Health = 5.0
 Speed = 100.0
-Knockback = 100.0
+Knockback = 200.0
 KnockbackRecovery = 1000.0
 
 [node name="TargetArea" type="Area2D" parent="." index="1"]
