@@ -7,7 +7,6 @@
 [node name="Enemy" instance=ExtResource("1_6plm2")]
 script = ExtResource("2_1ehl7")
 Health = 5.0
-Speed = 100.0
 Knockback = 200.0
 KnockbackRecovery = 1000.0
 

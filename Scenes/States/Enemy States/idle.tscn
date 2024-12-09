@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg27srdoiylbo"]
+
+[ext_resource type="PackedScene" uid="uid://r852q1cg2jj0" path="res://Scenes/state.tscn" id="1_gdmxh"]
+[ext_resource type="Script" path="res://Scripts/States/Enemy States/idle.gd" id="2_plsd7"]
+
+[node name="idle" instance=ExtResource("1_gdmxh")]
+script = ExtResource("2_plsd7")
+max_home_dist = 50.0
+min_travel_dist = 15.0
+min_rest_time = 1.0
+max_rest_time = 2.5
+speed = 50.0
+acceleration = 100.0

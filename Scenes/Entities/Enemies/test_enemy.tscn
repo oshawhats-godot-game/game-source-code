@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://vbv3xmd34idt" path="res://Scenes/Entities/enemy.tscn" id="1_anpsd"]
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/test_enemy.gd" id="2_datp6"]
-[ext_resource type="PackedScene" uid="uid://cg27srdoiylbo" path="res://Scenes/States/enemy_idle.tscn" id="3_p26kb"]
-[ext_resource type="PackedScene" uid="uid://g7mune64mhgp" path="res://Scenes/States/enemy_follow.tscn" id="4_sxqt0"]
+[ext_resource type="PackedScene" uid="uid://cg27srdoiylbo" path="res://Scenes/States/Enemy States/idle.tscn" id="3_p26kb"]
+[ext_resource type="PackedScene" uid="uid://g7mune64mhgp" path="res://Scenes/States/Enemy States/surround.tscn" id="4_sxqt0"]
 [ext_resource type="PackedScene" uid="uid://yw7tjn4svm5r" path="res://GUI Scenes/stat_bar.tscn" id="5_fcjca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkuiu"]
@@ -12,8 +12,8 @@ size = Vector2(40, 40)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4a8sy"]
 radius = 150.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_th2g1"]
-size = Vector2(50, 50)
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7qxk"]
+radius = 28.0713
 
 [node name="TestEnemy" instance=ExtResource("1_anpsd")]
 script = ExtResource("2_datp6")
@@ -35,15 +35,17 @@ shape = SubResource("CircleShape2D_4a8sy")
 [node name="HitArea" type="Area2D" parent="." index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" index="0"]
-shape = SubResource("RectangleShape2D_th2g1")
+shape = SubResource("CircleShape2D_w7qxk")
 
 [node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("InitialState")]
 InitialState = NodePath("idle")
 
-[node name="idle" parent="StateMachine" index="0" node_paths=PackedStringArray("enemy") instance=ExtResource("3_p26kb")]
+[node name="idle" parent="StateMachine" index="0" node_paths=PackedStringArray("next_state", "enemy") instance=ExtResource("3_p26kb")]
+next_state = NodePath("../follow")
 enemy = NodePath("../..")
 
-[node name="follow" parent="StateMachine" index="1" node_paths=PackedStringArray("enemy") instance=ExtResource("4_sxqt0")]
+[node name="follow" parent="StateMachine" index="1" node_paths=PackedStringArray("too_far_state", "enemy") instance=ExtResource("4_sxqt0")]
+too_far_state = NodePath("../idle")
 enemy = NodePath("../..")
 speed = 100.0
 

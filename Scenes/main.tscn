@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://daajyu6ra1xs5"]
+[gd_scene load_steps=5 format=3 uid="uid://daajyu6ra1xs5"]
 
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_8r2mo"]
 [ext_resource type="PackedScene" uid="uid://7p1d2delcpd0" path="res://Scenes/Entities/player.tscn" id="1_aqrve"]
 [ext_resource type="PackedScene" uid="uid://bkhtc3cbw2cdt" path="res://Scenes/Entities/Enemies/test_enemy.tscn" id="2_egmpb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6xhc"]
+size = Vector2(44, 80)
+
 [node name="Main" type="Node2D"]
+script = ExtResource("1_8r2mo")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -384.0
@@ -19,3 +24,15 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="TestEnemy" parent="." instance=ExtResource("2_egmpb")]
 position = Vector2(212, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(117, -14)
+shape = SubResource("RectangleShape2D_f6xhc")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = 95.0
+offset_top = -54.0
+offset_right = 139.0
+offset_bottom = 26.0
