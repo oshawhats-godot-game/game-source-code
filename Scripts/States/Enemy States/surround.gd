@@ -26,11 +26,8 @@ func enter():
 	randomize_target_offset()
 
 
-func physics_update(_delta: float):
-	var target_pos = target.global_position + target_offset
-	
+func physics_update(_delta: float):	
 	var dist = enemy.global_position.distance_to(target.global_position)
-	var dir = enemy.global_position.direction_to(target_pos)
 	
 	enemy.move(speed, acceleration)
 	

@@ -73,15 +73,15 @@ func move(new_speed, new_acceleration):
 
 func gen_raycasts(num_casts: int):
 	var angle_step = (2 * PI) / num_casts
-	var raycasts = []
+	var _raycasts = []
 	
 	for x in range(num_casts):
 		var new_cast = RayCast2D.new()
 		add_child(new_cast)
 		new_cast.target_position = Vector2(0, 50).rotated(angle_step * x)
-		raycasts.append(new_cast)
+		_raycasts.append(new_cast)
 	
-	return raycasts
+	return _raycasts
 
 
 func get_nearest_targetable_player() -> Player:
