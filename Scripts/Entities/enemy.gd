@@ -43,6 +43,9 @@ func _physics_process(delta: float) -> void:
 	
 	var target_dir = move_dirs[max_ind_array(context_map)]
 	
+	for child in get_parent().get_children():
+		if child is Line2D:
+			child.queue_free()
 	
 	for x in range(len(context_map)):
 		var line = Line2D.new()
@@ -50,7 +53,6 @@ func _physics_process(delta: float) -> void:
 		line.add_point(global_position)
 		line.add_point(global_position + (move_dirs[x] * 40 * abs(context_map[x])))
 		line.modulate = Color.GREEN if context_map[x] > 0 else Color.RED
-		line.call_deferred("queue_free")
 	
 	target_velocity = target_dir * _speed
 	
