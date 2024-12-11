@@ -43,16 +43,16 @@ func _physics_process(delta: float) -> void:
 	
 	var target_dir = move_dirs[max_ind_array(context_map)]
 	
-	for child in get_parent().get_children():
-		if child is Line2D:
-			child.queue_free()
-	
-	for x in range(len(context_map)):
-		var line = Line2D.new()
-		get_parent().add_child(line)
-		line.add_point(global_position)
-		line.add_point(global_position + (move_dirs[x] * 40 * abs(context_map[x])))
-		line.modulate = Color.GREEN if context_map[x] > 0 else Color.RED
+	#for child in get_parent().get_children():
+		#if child is Line2D:
+			#child.queue_free()
+	#
+	#for x in range(len(context_map)):
+		#var line = Line2D.new()
+		#get_parent().add_child(line)
+		#line.add_point(global_position)
+		#line.add_point(global_position + (move_dirs[x] * 40 * abs(context_map[x])))
+		#line.modulate = Color.GREEN if context_map[x] > 0 else Color.RED
 	
 	target_velocity = target_dir * _speed
 	
@@ -78,7 +78,7 @@ func gen_raycasts(num_casts: int):
 	for x in range(num_casts):
 		var new_cast = RayCast2D.new()
 		add_child(new_cast)
-		new_cast.target_position = Vector2(0, 50).rotated(angle_step * x)
+		new_cast.target_position = Vector2(0, 15).rotated(angle_step * x)
 		_raycasts.append(new_cast)
 	
 	return _raycasts

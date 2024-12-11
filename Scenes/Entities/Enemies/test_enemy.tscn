@@ -7,23 +7,24 @@
 [ext_resource type="PackedScene" uid="uid://yw7tjn4svm5r" path="res://GUI Scenes/stat_bar.tscn" id="5_fcjca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkuiu"]
-size = Vector2(40, 40)
+size = Vector2(12, 12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4a8sy"]
-radius = 150.0
+radius = 50.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w7qxk"]
-radius = 28.0713
+radius = 9.05539
 
 [node name="TestEnemy" instance=ExtResource("1_anpsd")]
 script = ExtResource("2_datp6")
 Health = 20.0
+KnockbackRecovery = 200.0
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
 color = Color(1, 0, 0.164706, 1)
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -41,13 +42,19 @@ shape = SubResource("CircleShape2D_w7qxk")
 InitialState = NodePath("idle")
 
 [node name="idle" parent="StateMachine" index="0" node_paths=PackedStringArray("next_state", "enemy") instance=ExtResource("3_p26kb")]
+max_home_dist = 24.0
+min_travel_dist = 5.0
 next_state = NodePath("../follow")
 enemy = NodePath("../..")
+speed = 10.0
 
 [node name="follow" parent="StateMachine" index="1" node_paths=PackedStringArray("too_far_state", "enemy") instance=ExtResource("4_sxqt0")]
+max_follow_dist = 30.0
+max_circle_radius = 15.0
+min_circle_radius = 8.0
 too_far_state = NodePath("../idle")
 enemy = NodePath("../..")
-speed = 100.0
+speed = 30.0
 
 [node name="Node2D" type="Node2D" parent="." index="5"]
 scale = Vector2(0.25, 0.25)

@@ -8,7 +8,7 @@ enum direction {
 
 const OFFSET_TO_TURN = 15
 
-const BASE_SPEED: float = 250
+const BASE_SPEED: float = 50
 const BASE_ACCELERATION: float = BASE_SPEED * 10
 const BASE_KNOCKBACK_RECOVERY: float = 750
 
@@ -20,7 +20,7 @@ const BASE_MAX_STAMINA: float = 100
 const BASE_STAMINA_REGEN: float = 10
 const BASE_STAMINA_REGEN_DELAY: float = 3
 
-const SPRINT_SPEED_BOOST: float = BASE_SPEED * .3
+const SPRINT_SPEED_BOOST: float = BASE_SPEED * .5
 const SPRINT_STAMINA_DRAIN: float = 15
 
 var speed: float
