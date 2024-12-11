@@ -6,7 +6,7 @@ enum direction {
 	RIGHT,
 }
 
-const OFFSET_TO_TURN = 15
+const OFFSET_TO_TURN = 5
 
 const BASE_SPEED: float = 50
 const BASE_ACCELERATION: float = BASE_SPEED * 10
