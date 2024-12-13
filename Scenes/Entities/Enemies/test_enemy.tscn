@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://vbv3xmd34idt" path="res://Scenes/Entities/enemy.tscn" id="1_anpsd"]
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/test_enemy.gd" id="2_datp6"]
 [ext_resource type="PackedScene" uid="uid://cg27srdoiylbo" path="res://Scenes/States/Enemy States/idle.tscn" id="3_p26kb"]
-[ext_resource type="PackedScene" uid="uid://g7mune64mhgp" path="res://Scenes/States/Enemy States/surround.tscn" id="4_sxqt0"]
+[ext_resource type="PackedScene" uid="uid://g7mune64mhgp" path="res://Scenes/States/Enemy States/attack.tscn" id="4_sxqt0"]
 [ext_resource type="PackedScene" uid="uid://yw7tjn4svm5r" path="res://GUI Scenes/stat_bar.tscn" id="5_fcjca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkuiu"]

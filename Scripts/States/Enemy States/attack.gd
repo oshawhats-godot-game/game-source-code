@@ -2,8 +2,6 @@ extends EnemyState
 
 
 @export var max_follow_dist: float = 500
-@export var max_circle_radius: float = 125
-@export var min_circle_radius: float = 75
 @export var too_far_state: State
 
 var target: Node2D
@@ -11,19 +9,8 @@ var target_offset: Vector2
 var circle_radius: float
 
 
-func randomize_target_offset():
-	circle_radius = randf_range(min_circle_radius, max_circle_radius)
-	
-	target_offset.x = randf()
-	target_offset.y = randf()
-	
-	target_offset = target_offset.normalized() * circle_radius
-
-
 func enter():
 	target = enemy.get_nearest_targetable_player()
-	
-	randomize_target_offset()
 
 
 func physics_update(_delta: float):
