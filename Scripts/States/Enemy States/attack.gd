@@ -5,8 +5,6 @@ extends EnemyState
 @export var too_far_state: State
 
 var target: Node2D
-var target_offset: Vector2
-var circle_radius: float
 
 
 func enter():
