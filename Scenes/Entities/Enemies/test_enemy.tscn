@@ -50,6 +50,7 @@ speed = 10.0
 
 [node name="attack" parent="StateMachine" index="1" node_paths=PackedStringArray("too_far_state", "hit_area", "enemy") instance=ExtResource("4_sxqt0")]
 max_follow_dist = 30.0
+attack_delay = 0.15
 too_far_state = NodePath("../idle")
 hit_area = NodePath("../../HitArea")
 enemy = NodePath("../..")

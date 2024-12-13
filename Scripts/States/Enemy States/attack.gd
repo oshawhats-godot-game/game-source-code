@@ -5,7 +5,7 @@ extends EnemyState
 @export var attack_damage: float = 20
 @export var knockback: float = 100
 @export var attack_cooldown: float = 2
-@export var attack_delay: float = .5
+@export var attack_delay: float = .15
 
 @export var too_far_state: State
 @export var hit_area: Area2D
