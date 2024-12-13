@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cjm0painx5we7" path="res://Scenes/state_machine.tscn" id="3_3neph"]
 
 [node name="Enemy" instance=ExtResource("1_6plm2")]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("2_1ehl7")
 Health = 5.0
-Knockback = 200.0
 KnockbackRecovery = 1000.0
 
 [node name="TargetArea" type="Area2D" parent="." index="1"]

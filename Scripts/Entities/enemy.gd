@@ -3,7 +3,6 @@ class_name Enemy
 
 
 @export var Health: float = 5
-@export var Knockback: float = 100
 @export var KnockbackRecovery: float = 1000
 
 @onready var raycasts = gen_raycasts(16)
@@ -78,7 +77,10 @@ func gen_raycasts(num_casts: int):
 	for x in range(num_casts):
 		var new_cast = RayCast2D.new()
 		add_child(new_cast)
+		
 		new_cast.target_position = Vector2(0, 15).rotated(angle_step * x)
+		new_cast.collision_mask = 2
+		
 		_raycasts.append(new_cast)
 	
 	return _raycasts

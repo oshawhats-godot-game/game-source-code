@@ -10,7 +10,7 @@ const OFFSET_TO_TURN = 5
 
 const BASE_SPEED: float = 50
 const BASE_ACCELERATION: float = BASE_SPEED * 10
-const BASE_KNOCKBACK_RECOVERY: float = 750
+const BASE_KNOCKBACK_RECOVERY: float = 200
 
 const BASE_MAX_HEALTH: float = 100
 const BASE_HEALTH_REGEN: float = 5

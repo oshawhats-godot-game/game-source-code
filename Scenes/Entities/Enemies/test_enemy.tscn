@@ -44,15 +44,14 @@ InitialState = NodePath("idle")
 [node name="idle" parent="StateMachine" index="0" node_paths=PackedStringArray("next_state", "enemy") instance=ExtResource("3_p26kb")]
 max_home_dist = 24.0
 min_travel_dist = 5.0
-next_state = NodePath("../follow")
+next_state = NodePath("../attack")
 enemy = NodePath("../..")
 speed = 10.0
 
-[node name="follow" parent="StateMachine" index="1" node_paths=PackedStringArray("too_far_state", "enemy") instance=ExtResource("4_sxqt0")]
+[node name="attack" parent="StateMachine" index="1" node_paths=PackedStringArray("too_far_state", "hit_area", "enemy") instance=ExtResource("4_sxqt0")]
 max_follow_dist = 30.0
-max_circle_radius = 15.0
-min_circle_radius = 8.0
 too_far_state = NodePath("../idle")
+hit_area = NodePath("../../HitArea")
 enemy = NodePath("../..")
 speed = 30.0
 
