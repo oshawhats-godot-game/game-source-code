@@ -16,6 +16,7 @@ radius = 50.0
 radius = 9.05539
 
 [node name="TestEnemy" instance=ExtResource("1_anpsd")]
+collision_mask = 3
 script = ExtResource("2_datp6")
 Health = 20.0
 KnockbackRecovery = 200.0
@@ -50,7 +51,6 @@ speed = 10.0
 
 [node name="attack" parent="StateMachine" index="1" node_paths=PackedStringArray("too_far_state", "hit_area", "enemy") instance=ExtResource("4_sxqt0")]
 max_follow_dist = 30.0
-attack_delay = 0.15
 too_far_state = NodePath("../idle")
 hit_area = NodePath("../../HitArea")
 enemy = NodePath("../..")
